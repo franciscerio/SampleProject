@@ -59,7 +59,7 @@ object Android {
 
     const val compileSdkVersion = 29
     const val targetSdkVersion = 29
-    const val minSdkVersion = 26
+    const val minSdkVersion = 23
     const val buildToolsVersion = "29.0.2"
 }
 
