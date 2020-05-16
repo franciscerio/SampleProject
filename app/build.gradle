@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    dataBinding {
+        enabled = true
+    }
+
+    compileSdkVersion Android.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.exam.sampleproject"
+        minSdkVersion Android.minSdkVersion
+        targetSdkVersion Android.targetSdkVersion
+
+        versionCode Android.versionCode
+        versionName Android.versionName
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        disable 'RestrictedApi'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':domain')
+
+    // Support
+    implementation Libs.appCompat
+    implementation Libs.constraintLayout
+    implementation Libs.supportDesign
+
+    // Kotlin
+    implementation Libs.kotlinStdlb
+
+    // RxKotlin
+    implementation Libs.rxkotlin
+
+    // RxAndroid
+    implementation Libs.rxandroid
+
+    // RxBinding
+    implementation Libs.rxbindingAndroidX
+    implementation Libs.rxbindingAndroidXCore
+    implementation Libs.rxbindingAndroidXAppCompat
+
+    // Core-KTX
+    implementation Libs.coreKTX
+
+    // Timber
+    implementation Libs.timber
+
+    // Arch Components
+    implementation Libs.archExtensions
+    kapt Libs.archExtensionsCompiler
+
+    // Dagger
+    implementation Libs.dagger
+    implementation Libs.daggerAndroid
+    implementation Libs.daggerSupport
+    kapt Libs.daggerProcessor
+    kapt Libs.daggerCompiler
+
+    // Testing
+    testImplementation TestLibs.junit
+    testImplementation TestLibs.mockito
+    testImplementation TestLibs.archCoreTesting
+    androidTestImplementation TestLibs.testRunner
+}

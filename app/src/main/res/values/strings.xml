@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SampleProject</string>
+    <string name="calculate">calculate</string>
+    <string name="go">go</string>
+    <string name="input">Input</string>
+    <string name="start_time">Start Time</string>
+    <string name="stop_time">Stop Time</string>
+    <string name="distance">Distance</string>
+    <string name="format_driver">Driver %s</string>
+    <string name="format_driver_trip">Trip %s %s %s %.1f</string>
+    <string name="please_add_driver_name">Please add driver  name</string>
+    <string name="start_time_greater_than_stop_time">Start time is greater than stop time</string>
+    <string name="list_must_not_empty">List must not be empty!</string>
+    <string name="expected">Expected output:</string>
+</resources>

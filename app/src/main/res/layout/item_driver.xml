@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/itemClickable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/driverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@{String.format(@string/format_driver, item.name)}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="Driver Francis" />
+
+    </FrameLayout>
+
+    <data>
+
+        <import type="com.exam.domain.poko.Driver" />
+
+        <variable
+            name="item"
+            type="com.exam.domain.poko.Driver" />
+    </data>
+</layout>
